@@ -124,3 +124,9 @@ if __name__ == "__main__":
     # Use Render's assigned port, or default to 10000
     port = int(os.environ.get("PORT", 10000))
     socketio.run(app, host='0.0.0.0', port=port)
+
+
+@app.route('/get-sensors', methods=['GET'])
+def get_sensors():
+    # This hands the bucket of data to whoever asks for it (like your WhatsApp bot)
+    return sensor_data
